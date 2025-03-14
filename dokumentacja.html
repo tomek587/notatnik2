@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dokumentacja Notatnika</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        section {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dokumentacja Notatnika - Aplikacja Python</h1>
+</header>
+
+<section>
+    <h2>Wprowadzenie</h2>
+    <p>Notatnik to aplikacja oparta na Pythonie, która umożliwia użytkownikowi tworzenie, edytowanie, przeglądanie oraz usuwanie notatek. Program wymaga bazy danych MySQL.</p>
+    <p>Program pozwala na:</p>
+    <ul>
+        <li>Rejestrację i logowanie użytkowników</li>
+        <li>Tworzenie, edytowanie oraz usuwanie notatek</li>
+        <li>Przeszukiwanie notatek za pomocą wyszukiwarki</li>
+        <li>Bezpieczne przechowywanie danych użytkownika i jego notatek w bazie danych</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Wymagania</h2>
+    <p>Aby uruchomić aplikację, należy posiadać następujące biblioteki:</p>
+    <ul>
+        <li><b>Python</b> w wersji 3.6 lub nowszej</li>
+        <li><b>tkinter</b> - do tworzenia interfejsu</li>
+        <li><b>Pillow</b> - do obsługi obrazów</li>
+        <li><b>mysql-connector</b> - do połączenia z bazą danych</li>
+        <li><b>mysql</b> - do połączenia z bazą danych</li>
+        <li><b>configparser</b> - do przechowywania danych bazy danych w pliku config.ini</li>
+    </ul>
+    <p>Aby zainstalować te biblioteki, uruchom następujące polecenie:</p>
+    <pre>
+        pip install tkinter Pillow mysql-connector configparser mysql
+    </pre>
+</section>
+
+<section>
+    <h2>Uruchomienie Aplikacji</h2>
+
+    <h3>Kroki, aby uruchomić program:</h3>
+    <ol>
+        <li>(Jeśli potrzebne) Skonfiguruj nazwę hosta, użytkownika i hasło w pliku <code>config.ini</code></li>
+        <li>Uruchom plik <code>main.py</code>, np. z poziomu terminala: <code>python main.py</code>, aby uruchomić aplikację</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Jak Działa Program?</h2>
+
+    <h3>1. Logowanie/Rejestracja</h3>
+    <p>Po uruchomieniu aplikacji użytkownik jest proszony o podanie loginu i hasła. Jeśli użytkownik istnieje w bazie danych, może się zalogować. Jeśli konto nie istnieje, program utworzy nowe konto i zaloguje użytkownika.</p>
+
+    <h3>2. Notatnik</h3>
+    <p>Po zalogowaniu użytkownik zostaje przeniesiony do głównej aplikacji, w której może przeglądać swoje notatki. Użytkownik może:</p>
+    <ul>
+        <li>Przeglądać notatki - notatki wyświetlane są na liście z krótkim podglądem oraz datą ich utworzenia</li>
+        <li>Dodawać notatki</li>
+        <li>Edytować istniejące notatki</li>
+        <li>Usuwać notatki</li>
+        <li>Wyszukiwać notatki</li>
+    </ul>
+
+    <h3>3. Wylogowanie</h3>
+    <p>Użytkownik może się wylogować. Po wylogowaniu aplikacja wraca do ekranu logowania.</p>
+</section>
+
+<section>
+    <h2>Struktura Bazy Danych</h2>
+    <p>Program korzysta z bazy danych MySQL, która zawiera dwie tabele:</p>
+    <ul>
+        <li><b>users</b> - przechowuje dane użytkowników (login i zaszyfrowane hasło)</li>
+        <li><b>notatki</b> - przechowuje notatki, które są powiązane z użytkownikami za pomocą klucza (user_id)</li>
+    </ul>
+    <p>Baza danych jest tworzona automatycznie przy pierwszym uruchomieniu programu, o ile konfiguracja bazy danych jest poprawna.</p>
+</section>
+
+</body>
+</html>
